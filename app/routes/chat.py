@@ -40,6 +40,16 @@ async def list_conversations(
     return  [ConversationOut(**c) for c in convos] 
 
 
+@router.post("/chat/mark-read/{guest_id}")
+async def mark_conversation_read(
+    guest_id: str,
+    admin_id: int = Depends(get_current_admin_id),
+    conn=Depends(get_connection),
+):
+    await chat_repo.mark_read(conn, guest_id, sender_to_mark="guest")
+    return {"message": "ok"}
+
+
 # ---------- WEBSOCKET: ГОСТЬ ----------
 
 @router.websocket("/chat/ws/guest/{guest_id}")
