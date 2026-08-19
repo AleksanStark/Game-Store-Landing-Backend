@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: tim_game_store_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: muramasa_segun
+      POSTGRES_DB: tim_game_store
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: tim_game_store_backend
+    expose:
+      - "8000"
+    volumes:
+      - ./uploads:/uploads
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    container_name: tim_game_store_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./uploads:/uploads:ro
+    depends_on:
+      - backend
+
+volumes:
+  pg_data:
