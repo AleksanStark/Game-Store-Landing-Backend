@@ -72,34 +72,34 @@ WHERE NOT EXISTS (
 INSERT INTO product_images (product_id, path, position)
 SELECT p.id, v.img, 0
 FROM (VALUES
-    ('PS5 Pro',                              'new',  '/assets/ps5-pro.jpeg'),
-    ('PS5 Pro',                              'used', '/assets/ps5-pro.jpeg'),
-    ('PS5 Slim',                             'used', '/assets/ps5-digital-edition.jpeg'),
-    ('PlayStation VR2',                      'new',  '/assets/ps-vr-2.jpeg'),
-    ('PlayStation VR2',                      'used', '/assets/ps-vr-2.jpeg'),
-    ('PS5 Disc Edition',                     'new',  '/assets/ps5-disc-edition.jpeg'),
-    ('PS5 Disc Edition',                     'used', '/assets/ps5-disc-edition.jpeg'),
-    ('PS5 Slim Disc Edition (новая)',        'new',  '/assets/ps5-slim-disc-edition.jpg'),
-    ('PS5 Slim Disc Edition (Б/У)',          'used', '/assets/ps5-slim-disc-edition.jpg'),
-    ('PS5 Slim Digital Edition (новая)',     'new',  '/assets/ps5-slim-digital-edition.jpg'),
-    ('PS5 Slim Digital Edition (Б/У)',       'used', '/assets/ps5-slim-digital-edition.jpg'),
-    ('PS4 Slim',                             'used', '/assets/ps4-slim.jpg'),
-    ('PS4 Pro',                              'new',  '/assets/ps4-pro.jpg'),
-    ('PS4 Pro',                              'used', '/assets/ps4-pro.jpg'),
+    ('PS5 Pro',                              'new',  ' /uploads/products/ps5-pro.jpeg'),
+    ('PS5 Pro',                              'used', ' /uploads/products/ps5-pro.jpeg'),
+    ('PS5 Slim',                             'used', ' /uploads/products/ps5-digital-edition.jpeg'),
+    ('PlayStation VR2',                      'new',  ' /uploads/products/ps-vr-2.jpeg'),
+    ('PlayStation VR2',                      'used', ' /uploads/products/ps-vr-2.jpeg'),
+    ('PS5 Disc Edition',                     'new',  ' /uploads/products/ps5-disc-edition.jpeg'),
+    ('PS5 Disc Edition',                     'used', ' /uploads/products/ps5-disc-edition.jpeg'),
+    ('PS5 Slim Disc Edition (новая)',        'new',  ' /uploads/products/ps5-slim-disc-edition.jpg'),
+    ('PS5 Slim Disc Edition (Б/У)',          'used', ' /uploads/products/ps5-slim-disc-edition.jpg'),
+    ('PS5 Slim Digital Edition (новая)',     'new',  ' /uploads/products/ps5-slim-digital-edition.jpg'),
+    ('PS5 Slim Digital Edition (Б/У)',       'used', ' /uploads/products/ps5-slim-digital-edition.jpg'),
+    ('PS4 Slim',                             'used', ' /uploads/products/ps4-slim.jpg'),
+    ('PS4 Pro',                              'new',  ' /uploads/products/ps4-pro.jpg'),
+    ('PS4 Pro',                              'used', ' /uploads/products/ps4-pro.jpg'),
 
-    ('Ghost of Tsushima (диск)',             'new',  '/assets/ps5-ghost-of-tsushima-disk.jpg'),
-    ('The Last of Us Part II (диск)',        'used', '/assets/ps5-the-last-of-us-two.jpg'),
-    ('PlayStation-аккаунт (набор игр)',      'new',  '/assets/playstation-account-games.jpg'),
-    ('EA Sports FC 25 (диск)',               'used', '/assets/ps5-fc25.jpg'),
+    ('Ghost of Tsushima (диск)',             'new',  ' /uploads/products/ps5-ghost-of-tsushima-disk.jpg'),
+    ('The Last of Us Part II (диск)',        'used', ' /uploads/products/ps5-the-last-of-us-two.jpg'),
+    ('PlayStation-аккаунт (набор игр)',      'new',  ' /uploads/products/playstation-account-games.jpg'),
+    ('EA Sports FC 25 (диск)',               'used', ' /uploads/products/ps5-fc25.jpg'),
 
-    ('iPhone 17 Pro',                        'new',  '/assets/iphone-17-pro.jpg'),
-    ('iPhone 15',                            'used', '/assets/iphone-15.jpg'),
-    ('Samsung Galaxy S25',                   'used', '/assets/samsung-s25.jpg'),
-    ('Samsung Galaxy S25 Ultra',             'new',  '/assets/samsung-s25-ultra.jpg'),
+    ('iPhone 17 Pro',                        'new',  ' /uploads/products/iphone-17-pro.jpg'),
+    ('iPhone 15',                            'used', ' /uploads/products/iphone-15.jpg'),
+    ('Samsung Galaxy S25',                   'used', ' /uploads/products/samsung-s25.jpg'),
+    ('Samsung Galaxy S25 Ultra',             'new',  ' /uploads/products/samsung-s25-ultra.jpg'),
 
-    ('Dyson Airwrap',                        'new',  '/assets/dyson-airwrap.jpg'),
-    ('Dyson V15 (пылесос)',                  'used', '/assets/dyson-v15.jpg'),
-    ('Dyson Supersonic',                     'new',  '/assets/dyson-supersonic.jpg')
+    ('Dyson Airwrap',                        'new',  ' /uploads/products/dyson-airwrap.jpg'),
+    ('Dyson V15 (пылесос)',                  'used', ' /uploads/products/dyson-v15.jpg'),
+    ('Dyson Supersonic',                     'new',  ' /uploads/products/dyson-supersonic.jpg')
 ) AS v(name, condition, img)
 JOIN products p ON p.name = v.name AND p.condition = v.condition
 WHERE NOT EXISTS (
