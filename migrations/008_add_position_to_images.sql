@@ -1,0 +1,2 @@
+ALTER TABLE product_images
+  ADD COLUMN IF NOT EXISTS position INT NOT NULL DEFAULT 0;
