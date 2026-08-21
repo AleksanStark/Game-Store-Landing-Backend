@@ -5,7 +5,7 @@ from app.core.database import db
 from app.core.migrations import run_migrations
 from app.routes import products, categories, auth, images , chat
 
-origins = ["http://localhost:3000", "https://tim-game-store-landing.vercel.app"]
+origins = ["http://localhost:3000", "https://tim-game-store-landing.vercel.app", "https://www.tim-game-store.com"]
 
 
 @asynccontextmanager

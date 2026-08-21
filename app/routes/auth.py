@@ -33,7 +33,7 @@ async def register(data: RegisterRequest, response: Response, conn: asyncpg.Conn
         value=refresh_token,
         httponly=True,
         secure=True,
-        samesite="strict",
+        samesite=None,
         max_age=30 * 24 * 60 * 60,
     )
 
@@ -56,7 +56,7 @@ async def login(data: LoginRequest, response: Response, conn: asyncpg.Connection
         value=refresh_token,
         httponly=True,
         secure=True,
-        samesite="strict",
+        samesite=None,
         max_age=30 * 24 * 60 * 60,
     )
 
